@@ -23,10 +23,12 @@ load(":revisions.bzl", "RULES_DOCKER")
 
 http_archive(
     name = "rules_pkg",
-    url = "https://github.com/bazelbuild/rules_pkg/releases/download/0.2.5/rules_pkg-0.2.5.tar.gz",
     sha256 = "352c090cc3d3f9a6b4e676cf42a6047c16824959b438895a76c2989c6d7c246a",
+    url = "https://github.com/bazelbuild/rules_pkg/releases/download/0.2.5/rules_pkg-0.2.5.tar.gz",
 )
+
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
+
 rules_pkg_dependencies()
 
 http_archive(
@@ -84,9 +86,10 @@ http_file(
     urls = ["https://download.docker.com/linux/ubuntu/gpg"],
 )
 
+load("@bazel_toolchains//rules:environments.bzl", "clang_env")
+
 # These are used by CI only.
 load("@bazel_toolchains//rules:rbe_repo.bzl", "rbe_autoconfig")
-load("@bazel_toolchains//rules:environments.bzl", "clang_env")
 
 rbe_autoconfig(
     name = "rbe_toolchain_config",
