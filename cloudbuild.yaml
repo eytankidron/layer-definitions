@@ -82,5 +82,4 @@ steps:
     - "--remote_timeout=3600"
     - "--auth_enabled=true"
     - "--test_output=errors"
-    - "--host_force_python=PY2"
     - "//layers/..."
