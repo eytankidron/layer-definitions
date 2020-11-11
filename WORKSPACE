@@ -56,10 +56,6 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
-load("@io_bazel_rules_docker//repositories:pip_repositories.bzl", "pip_deps")
-
-pip_deps()
-
 # GCloud gpg key necessary to run the download_pkgs target (to build the tarball
 # of debian packages) of the gcloud layer in this repo.
 # This is NOT needed to use the language_tool_layer target of the gcloud layer.
