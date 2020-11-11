@@ -13,9 +13,8 @@
 # limitations under the License.
 
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("@rules_pkg//:pkg.bzl", "pkg_tar")
-load("@io_bazel_rules_docker//contrib/automatic_container_release:packages_metadata.bzl", "packages_metadata")
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
+load("@io_bazel_rules_docker//contrib/automatic_container_release:packages_metadata.bzl", "packages_metadata")
 load("@io_bazel_rules_docker//docker/package_managers:download_pkgs.bzl", "download_pkgs")
 load(
     "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
@@ -23,6 +22,7 @@ load(
     "toolchain_container",
 )
 load("@io_bazel_rules_docker//docker/util:run.bzl", "container_run_and_extract")
+load("@rules_pkg//:pkg.bzl", "pkg_tar")
 load(":jdk_revisions.bzl", "OPENJDK_INSTALLER", "OPENJDK_SRC")
 
 licenses(["notice"])  # Apache 2.0
